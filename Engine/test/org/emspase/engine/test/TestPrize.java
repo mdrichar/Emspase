@@ -1,8 +1,9 @@
-package org.emspace.engine.test;
+package org.emspase.engine.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-import org.emspace.engine.Prize;
+import org.emspase.engine.Prize;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

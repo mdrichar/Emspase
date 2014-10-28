@@ -1,4 +1,4 @@
-package org.emspace.engine;
+package org.emspase.engine;
 
 public class Prize {
 	protected int quantity;
