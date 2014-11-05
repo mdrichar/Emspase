@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Vicissitudes implements Rules {
+public class VicissitudesRules implements Rules {
 
 	@Override
 	public State initialState() {
