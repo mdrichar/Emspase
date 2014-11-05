@@ -54,4 +54,8 @@ public class VicissitudesState extends State {
 	public int maxScore() {
 		return Collections.max(victoryPoints).intValue();
 	}
+	public boolean isTerminal() {
+		// TODO Auto-generated method stub
+		return maxScore() >= POINTS_NEEDED_TO_WIN;
+	}
 }

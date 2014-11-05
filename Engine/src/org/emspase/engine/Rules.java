@@ -7,8 +7,8 @@ import java.util.Set;
 public interface Rules {
 	State initialState();
 	List<Action> getLegalMoves(State s);
-	Player whoseTurn(State s);
-	boolean isTerminal();
+	int whoseTurn(State s);
+	boolean isTerminal(State s);
 	Map<Player,Float> payoffs(State s);
 	ObsListStatePair execute(State s, Action a);
 	boolean isLegal(Action a, State s);

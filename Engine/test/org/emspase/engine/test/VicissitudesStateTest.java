@@ -22,5 +22,9 @@ public class VicissitudesStateTest {
 	public void test() {
 		assertEquals(vs.size(),4);
 	}
+	
+	public void testNotTerminal() {
+		assertFalse(vs.isTerminal());
+	}
 
 }

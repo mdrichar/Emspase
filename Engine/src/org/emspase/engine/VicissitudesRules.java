@@ -18,14 +18,15 @@ public class VicissitudesRules implements Rules {
 	}
 
 	@Override
-	public Player whoseTurn(State s) {
+	public int whoseTurn(State s) {
 		// TODO Auto-generated method stub
-		return null;
+		return ((VicissitudesState)s).whoseTurn;
 	}
 
 	@Override
-	public boolean isTerminal() {
+	public boolean isTerminal(State s) {
 		// TODO Auto-generated method stub
+		((VicissitudesState)s).isTerminal();
 		return false;
 	}
 
