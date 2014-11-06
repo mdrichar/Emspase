@@ -23,6 +23,12 @@ public class VicissitudesStateTest {
 		assertEquals(vs.size(),4);
 	}
 	
+	@Test
+	public void testMaxScore() {
+		assertEquals(vs.maxScore(),0);
+	}
+	
+	@Test
 	public void testNotTerminal() {
 		assertFalse(vs.isTerminal());
 	}

@@ -9,15 +9,16 @@ public class VicissitudesState extends State {
 	public static final int POINTS_NEEDED_TO_WIN = 10;
 	public Graph graph;
 	public ArrayList< ResourceTracker > resources;
-	protected int playerCnt = 1;
+	protected int playerCnt;
 	public int whoseTurn = 0;
 	public ArrayList<Pawn> pawns;
 	public int[] scores;
 	public ArrayList<Integer> victoryPoints;
 	
 	public VicissitudesState() {
+		this.playerCnt = 1;
 		scores = new int[this.playerCnt];
-		for (int i = 0; i < playerCnt; playerCnt++) {
+		for (int i = 0; i < playerCnt; i++) {
 			scores[i] = 0;
 		}
 		victoryPoints = new ArrayList<Integer>(this.playerCnt);
@@ -36,12 +37,19 @@ public class VicissitudesState extends State {
 		this.graph.addNode(node4);
 		
 		resources = new ArrayList< ResourceTracker >();
-		for (int i = 0; i < playerCnt; playerCnt++) {
+		for (int i = 0; i < playerCnt; i++) {
 		   resources.add( new ResourceTracker() );
 		}
 		
 		pawns = new ArrayList<Pawn>();
 		pawns.add(new Pawn(0,node1));
+		
+		this.victoryPoints = new ArrayList<Integer>();
+		for (int i = 0; i < playerCnt; i++) {
+			   this.victoryPoints.add( new Integer(0) );
+			}
+		
+		
 	}
 	public int getPlayerCnt() {
 		return playerCnt;
@@ -54,8 +62,16 @@ public class VicissitudesState extends State {
 	public int maxScore() {
 		return Collections.max(victoryPoints).intValue();
 	}
+	
 	public boolean isTerminal() {
-		// TODO Auto-generated method stub
+		//TODO Auto-generated method stub
 		return maxScore() >= POINTS_NEEDED_TO_WIN;
 	}
+	
+	// Actions: move pawn src dest payments...
+	// Actions: spawn pawn dest
+	// Actions: buy vpchit
+	// Actions: earn
+	
+	
 }
