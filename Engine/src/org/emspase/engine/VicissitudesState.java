@@ -3,6 +3,7 @@ package org.emspase.engine;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class VicissitudesState extends State {
@@ -14,6 +15,11 @@ public class VicissitudesState extends State {
 	public ArrayList<Pawn> pawns;
 	public int[] scores;
 	public ArrayList<Integer> victoryPoints;
+	
+	public VicissitudesState(VicissitudesState other) {
+	   this.graph = new Graph(other.graph);
+	   this.resources = resources.
+	}
 	
 	public VicissitudesState() {
 		this.playerCnt = 1;
@@ -66,6 +72,19 @@ public class VicissitudesState extends State {
 	public boolean isTerminal() {
 		//TODO Auto-generated method stub
 		return maxScore() >= POINTS_NEEDED_TO_WIN;
+	}
+	
+	public List<Action> getLegalActions() {
+		List<Action> result = new ArrayList<Action>();
+		VicissitudesAction va = new VicissitudesAction(1);
+		result.add(va);
+		return result;
+	}
+	
+	public void apply(VicissitudesAction va) {
+		if (va.type == ActionType.BUY_CHIT) {
+			scores[whoseTurn]++;
+		}
 	}
 	
 	// Actions: move pawn src dest payments...

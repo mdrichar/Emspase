@@ -51,7 +51,7 @@ public class VicissitudesRules implements Rules {
 	@Override
 	public List<Action> getLegalActions(State s) {
 		// TODO Auto-generated method stub
-		return null;
+		return ((VicissitudesState)s).getLegalActions();
 	}
 
 	@Override
