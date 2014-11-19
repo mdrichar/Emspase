@@ -2,7 +2,7 @@ package org.emspase.engine;
 
 public class Pawn {
 	protected int player;
-	protected GraphNode location;
+	protected int location;
 
 	public int getPlayer() {
 		return player;
@@ -12,16 +12,22 @@ public class Pawn {
 		this.player = player;
 	}
 
-	public GraphNode getLocation() {
+	public int getLocation() {
 		return location;
 	}
 
-	public void setLocation(GraphNode location) {
+	public void setLocation(int location) {
 		this.location = location;
 	}
 
-	public Pawn(int player, GraphNode location) {
-		// TODO Auto-generated constructor stub
+	public Pawn(int player, int location) {
+		this.player = player;
+		this.location = location;		
+	}
+
+	public Pawn(Pawn p) {
+		this.player = p.player;
+		this.location = p.location;
 	}
 
 }

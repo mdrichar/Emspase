@@ -6,7 +6,6 @@ import java.util.Set;
 public class GraphNode {
 	protected int id;
 	protected Color color;
-	protected Set<GraphNode> neighbors;
 	protected Prize prize;
 	public int getId() {
 		return id;
@@ -31,13 +30,13 @@ public class GraphNode {
 		this.id = id;
 		this.color = color;
 		this.prize = prize;
-		this.neighbors = new HashSet<GraphNode>();
 	}
 	
-	public boolean addNeighbor(GraphNode node) {
-		if (node != null) {
-			return neighbors.add(node);
-		} else return false;
+	public GraphNode(GraphNode n) {
+		// TODO Auto-generated constructor stub
+		this.id = n.id;
+		this.color = n.color;
+		this.prize = n.prize;
 	}
 	
 }
