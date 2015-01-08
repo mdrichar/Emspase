@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class VicissitudesState extends State {
-	public static final int POINTS_NEEDED_TO_WIN = 10;
+	public static final int POINTS_NEEDED_TO_WIN = 2;
 	public Graph graph;
 	public ArrayList<ResourceTracker> resources;
 	protected int playerCnt;

@@ -1,5 +1,6 @@
 package org.emspase.engine;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -38,8 +39,11 @@ public class VicissitudesRules implements Rules {
 
 	@Override
 	public ObsListStatePair execute(State s, Action a) {
-		// TODO Auto-generated method stub
-		return null;
+		// TODO Make observations real
+		List<Observation> bogusObservations = new ArrayList<Observation>();
+		VicissitudesState next = new VicissitudesState((VicissitudesState)s);
+		next.apply((VicissitudesAction)a);
+		return new ObsListStatePair(bogusObservations,next);
 	}
 
 	@Override
